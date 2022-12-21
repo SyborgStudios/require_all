@@ -78,7 +78,7 @@ module RequireAll
         end
 
         # If we ain't got no files, the glob failed
-        raise LoadError, "no such file to load -- #{arg}" if files.empty?
+        #raise LoadError, "no such file to load -- #{arg}" if files.empty?
       end
     end
 
@@ -98,8 +98,8 @@ module RequireAll
         __require(options[:method], file_)
       rescue NameError => e
         # Only wrap NameError exceptions for uninitialized constants
-        raise e unless e.instance_of?(NameError) && e.message.include?('uninitialized constant')
-        raise LoadError, "Could not require #{file_} (#{e}). Please require the necessary files"
+        #raise e unless e.instance_of?(NameError) && e.message.include?('uninitialized constant')
+        #raise LoadError, "Could not require #{file_} (#{e}). Please require the necessary files"
       end
     end
 
